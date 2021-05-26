@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 8px;
+}
+.overall{
+    background-image: linear-gradient(rgba(49,0,255,0.8),rgba(132,5,29,0.8)),url(./unnamed\ \(1\).png);
+    background-size: cover;
+    background-position: center;
+
+}
+.buttons{
+     display: flex; 
+    border: black; 
+    
+}
+.butt2{
+    border: black;
+    border-radius: 15px;
+}
+.fieldSpace{
+    border:solid black;
+    border-radius: 15px;
+    width: 400px;
+    height: 30px;
+    
+}
+
+
