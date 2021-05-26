@@ -6,6 +6,8 @@
     background-image: linear-gradient(rgba(49,0,255,0.8),rgba(132,5,29,0.8)),url(./unnamed\ \(1\).png);
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    height: 800px;
 
 }
 .buttons{
@@ -24,5 +26,19 @@
     height: 30px;
     
 }
-
-
+@media screen and (max-width:425px){
+   .overall{
+    flex-flow: column;
+   }
+   .fieldSpace{
+    width: 150px;
+}
+}
+@media screen and (min-width: 425px) and (max-width:720px){
+   .overall{
+    flex-flow: column;
+   }
+   .fieldSpace{
+       width: 150px;
+   }
+}

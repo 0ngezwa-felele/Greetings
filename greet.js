@@ -30,7 +30,7 @@ textFieldElement.innerHTML = hello.getPlease();
 
 
 greetButtonElement.addEventListener('click',checked);
-counterElement.addEventListener('click' ,function(){
+
     counter++;
     counter.innerHTML = counter;
-})
+
