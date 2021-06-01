@@ -1,41 +1,64 @@
-function Greetings() {
-    var text = [];
-    var names = 0;
-    var output = "";
+function Greetings(exist) {
+    var nameList = exist || []
+    var greetMessage;
 
     function setNames(name) {
-        if (!text.includes(name)) {
-            text.push(name)
-            names ++;
+        if (!nameList.includes(name)) {
+            nameList.push(name)
+            // names ++;
+            
         }
 
     }
-    
+   
+   
     function greetPlease(lang, myName){
         if (lang === "Isixhosa"){
-            output = "Molo, "+ myName[0].toUpperCase() + myName.slice(1).toLowerCase(); 
+            greetMessage = "Molo, "+ myName[0].toUpperCase() + myName.slice(1).toLowerCase(); 
             
         }
         else if(lang === "English"){
-            output = "Hello, "+ myName[0].toUpperCase() + myName.slice(1).toLowerCase();
+            greetMessage = "Hello, "+ myName[0].toUpperCase() + myName.slice(1).toLowerCase();
         }
         else if(lang === "SePedi"){
-            output = "Thobela, "+ myName[0].toUpperCase() + myName.slice(1).toLowerCase();
+            greetMessage = "Thobela, "+ myName[0].toUpperCase() + myName.slice(1).toLowerCase();
         }
     }
     function getPlease(){
-        return output;
+        return greetMessage
     }
-    function counter(){
-        return 
+    function counter1(){
+        return nameList.length
     }
-
+    function getText(){
+        return nameList;
+    }
+    function errorName(){
+        return "Please type in a Name"
+    }
+    function errorLang(){
+        return "Please select a language"
+    }
+    function errorBoth(){
+        return "Please type in a name and select a language"
+    }
+    
+    
+    
     return {
         Greetings,
         setNames,
         greetPlease,
         getPlease,
-        counter
+        counter1,
+        getText,
+        setTimeout,
+        errorName,
+        errorLang,
+        errorBoth
+
+        
 
     }
+    
 }

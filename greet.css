@@ -8,7 +8,7 @@
     background-position: center;
     background-repeat: no-repeat;
     height: 800px;
-    align-content: center;
+    /* padding: 450px; */
 
 }
 .buttons{
@@ -16,15 +16,25 @@
     border: black; 
     
 }
-.butt2{
+.butt2 button{
     border: black;
     border-radius: 15px;
 }
+.butt1 button{
+    border: black;
+    border-radius: 15px;
+}
+
 .fieldSpace{
     border:solid black;
     border-radius: 15px;
     width: 400px;
     height: 30px;
+    padding-left: 15px;
+    
+}
+.textbox{
+    display: flex;
     
 }
 @media screen and (max-width:425px){
