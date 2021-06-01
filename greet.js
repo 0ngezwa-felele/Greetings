@@ -21,7 +21,7 @@ if (localStorage['name']) {
 const hello = Greetings(existingNames)
 counterElement.innerHTML = hello.counter1()
 
-var radioBtn2 = "";
+var radioBtn2 = " ";
 let counter = 0;
 
 function checked() {
@@ -31,6 +31,7 @@ function checked() {
     var InputText = textElement.value
 
     if (radioBtn !== null && InputText !== "") {
+
         radioBtn2 = radioBtn.value
         hello.setNames(InputText);
         hello.greetPlease(radioBtn2, InputText)
