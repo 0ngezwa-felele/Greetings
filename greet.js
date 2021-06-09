@@ -4,7 +4,6 @@ const greetButtonElement = document.querySelector('.butt1');
 const resetButtonElement = document.querySelector('.butt2');
 const radioBtnElement = document.querySelector('.language');
 const textFieldElement = document.querySelector('.fieldSpace');
-// const counterElement = document.querySelector('counter');
 const storage = document.getElementsByClassName(".storage");
 const language = document.getElementsByClassName(".language");
 const butt1Elenment = document.getElementsByClassName(".butt1");
@@ -13,56 +12,76 @@ const counterElement = document.querySelector('.count');
 const errorElement = document.querySelector('.errorMessage')
 
 var existingNames;
+let counter = 0;
 
 if (localStorage['name']) {
-    existingNames = JSON.parse(localStorage['name'])
+    existingNames = JSON.parse(localStorage['name']);
+    counter = Number(localStorage['name']);
 }
 
+
+
 const hello = Greetings(existingNames)
+var character = /^[A-Za-z]+$/;
 counterElement.innerHTML = hello.counter1()
 
 var radioBtn2 = " ";
-let counter = 0;
+
 
 function checked() {
+    setTimeout(function () { errorElement.innerHTML = hello.errorTimeOut() }, 4000);
 
     var radioBtn = document.querySelector("input[name='language']:checked");
 
+
     var InputText = textElement.value
 
-    if (radioBtn !== null && InputText !== "") {
+    if (radioBtn !== null && InputText !== "" && character.test(textElement.value)) {
+
 
         radioBtn2 = radioBtn.value
         hello.setNames(InputText);
         hello.greetPlease(radioBtn2, InputText)
         textFieldElement.innerHTML = hello.getPlease();
-        counterElement.innerHTML = hello.counter1()
-        window.localStorage.setItem('name', JSON.stringify(hello.getText()));
+        errorElement.innerHTML = hello.existing();
+        counterElement.innerHTML = hello.counter1();
+        localStorage.setItem('name', JSON.stringify(hello.getText()));
 
+        // clearing the textbox when the greet button is clicked
         textElement.value = "";
         document.querySelector(".storage").value = "";
 
+        // clearing redio buttons when the greet button is clicked
+        // radioBtnElement.value = "";
+
+        document.querySelector(".language").checked = false;
+
     }
-    // alert(InputText === "")
-    if (InputText === "" && radioBtn === null) {
+    // error messages
+    else if (InputText === "" && radioBtn === null) {
         errorElement.innerHTML = hello.errorBoth();
 
     }
-    else if (InputText === "" && radioBtn !== null) {
+     else if (InputText === "" && radioBtn !== null) {
         errorElement.innerHTML = hello.errorName();
     }
-    else if (radioBtn === null) {
+    else  if (radioBtn === null) {
         errorElement.innerHTML = hello.errorLang();
     }
 
+     else if (!character.test(textElement.value)) {
+        errorElement.innerHTML = hello.SpecialChar();
+    }
 
-
+   
+      
+    
 
 }
 
-setTimeout(function () {
-}, 3000);
 
+
+// reset button
 function clear() {
     localStorage.clear();
     location.reload();
