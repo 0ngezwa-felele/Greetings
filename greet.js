@@ -52,9 +52,9 @@ function checked() {
         document.querySelector(".storage").value = "";
 
         // clearing redio buttons when the greet button is clicked
-        // radioBtnElement.value = "";
-
-        document.querySelector(".language").checked = false;
+        
+        console.log( document.querySelector("input[name='language']:checked").checked)
+        document.querySelector("input[name='language']:checked").checked = false;
 
     }
     // error messages

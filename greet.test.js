@@ -55,6 +55,43 @@ describe('greet tests', function () {
             assert.equal("Enter a valid name!", amanani.SpecialChar());
         });
     });
-   
-});
+   describe("counter", function(){
+    it("The number of times a name has been greeted",function(){
+        let counting  = Greetings([])
+        var name = "ongi"
+        var name2 = "avuzwa"
+        var name3 = "Ano"
+        var name4 = "kulisa"
+        var name5 = "natty"
+        var name6 = "Moso"
+        var name7  = "Ino"
+        var name8 = "Rori"
+        var name9 = "Azie"
+        var name10 = "milz"
 
+        counting.setNames(name)
+        counting.setNames(name2)
+        counting.setNames(name3)
+        counting.setNames(name4)
+        counting.setNames(name5)
+        counting.setNames(name6)
+        counting.setNames(name7)
+        counting.setNames(name8)
+        counting.setNames(name9)
+        counting.setNames(name10)
+
+        assert.deepEqual(10, counting.counter1())
+
+
+    })
+    it("Sholuld return the name greeted in Isixhosa in UPPERCASE and the rest in lowercases",function(){
+        let upper = Greetings([])
+        var string  = "ongie"
+
+        upper.greetPlease("ongie")
+        assert.equal("Ongie",upper.greetPlease())
+        
+   
+   })
+});
+});
