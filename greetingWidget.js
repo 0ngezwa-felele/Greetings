@@ -25,6 +25,8 @@ function Greetings(exist) {
         else if (lang === "Sepedi") {
             greetMessage = "Thobela, " + myName[0].toUpperCase() + myName.slice(1).toLowerCase();
         }
+        return greetMessage;
+
     }
     function getPlease() {
         return greetMessage

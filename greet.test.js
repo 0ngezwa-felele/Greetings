@@ -1,33 +1,22 @@
 describe('greet tests', function () {
     it('should be able to greet a name enetered in Isixhosa when the greet button is clicked', function () {
-        var xhosa = Greetings([]);
-        var string = "ongezwa";
+        let xhosa = Greetings();
 
-        xhosa.setNames(string);
-        xhosa.greetPlease("molo", "Ongezwa")
 
-        assert.equal("", xhosa.existing());
-
+        assert.equal("Molo, Ongezwa", xhosa.greetPlease("Isixhosa", "Ongezwa"));
     });
 
 
     it('should be able to greet the name entered in English when the greet button is clicked ', function () {
         var english = Greetings();
-        var string = "ongezwa";
-        var language = "hello"
-
-        english.setNames(string);
-
-        assert.equal("", english.existing());
+       
+       
+        assert.equal("Hello, Ongezwa", english.greetPlease("English", "Ongezwa"));
     })
     it('should be able to greet the name entered in Sepedi when the greet button is clicked ', function () {
         var sepedi = Greetings();
-        var string = "ongezwa";
-
-
-        sepedi.setNames(string);
-
-        assert.equal("", sepedi.existing());
+       
+        assert.equal("Thobela, Ongezwa", sepedi.greetPlease("Sepedi", "Ongezwa"));
     })
     describe('Error messages', function () {
         it('should return "Please type in a Name!" message when the language has been chosen but the text input field is still empty and the greetMe button has is clicked ', function () {
@@ -56,6 +45,16 @@ describe('greet tests', function () {
         });
     });
    describe("counter", function(){
+        it("Should be able to return the count number if the name is greeted",function(){
+        let number = Greetings()
+        number.setNames("Pumza");
+        number.getPlease("Isixhosa", "Pumza")
+   
+   })
+ 
+   
+});
+describe("Namelist",function(){
     it("The number of times a name has been greeted",function(){
         let counting  = Greetings([])
         var name = "ongi"
@@ -84,14 +83,6 @@ describe('greet tests', function () {
 
 
     })
-    it("Sholuld return the name greeted in Isixhosa in UPPERCASE and the rest in lowercases",function(){
-        let upper = Greetings([])
-        var string  = "ongie"
 
-        upper.greetPlease("ongie")
-        assert.equal("Ongie",upper.greetPlease())
-        
-   
-   })
-});
+})
 });

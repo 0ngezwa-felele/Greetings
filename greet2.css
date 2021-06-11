@@ -1,0 +1,86 @@
+.overall{
+    /* margin:10%; */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-image: linear-gradient(rgba(175, 168, 202, 0.8),rgba(155, 99, 116, 0.8)),url(./unnamed\ \(1\).png);
+    background-size: cover;
+    /* background-color: blueviolet; */
+    background-repeat: no-repeat;
+    border: solid black;
+    border-radius: 25px;
+    height: 500px;
+}
+.header{
+    text-align: center;
+    
+}
+.tests{
+    padding: 2em;
+}
+.buttons{
+    display: flex;
+    padding-left: 37em;
+}
+.tabs{
+    padding: 5em;
+}
+.textbox{
+    display: flex;
+    padding-left: 36em;
+    padding-top: 3em;
+}
+.count{
+    padding-left: 2em;
+}
+.butt2{
+    padding-left: 2em;
+    
+}
+.butt1 button{
+    width: 80px;
+    height: 50px;
+    border: solid black;
+    border-radius: 15px;
+}
+.butt2 button{
+    width: 80px;
+    height: 50px;
+    border: solid black;
+    border-radius: 15px;
+}
+.errorMessage{
+    color: crimson;
+}
+@media (min-width:992px){
+    .overall{
+        margin:10%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+}
+    .textbox{
+    display: flex;
+    padding-left: 36em;
+    padding-top: 3em;
+    }
+    .tabs{
+        padding: 5em;
+    }
+    
+}
+@media only screen and (max-width:992px) {
+    .overall{
+        /* margin:10%; */
+        /* display: flex; */
+        flex-direction: column;
+        text-align: center;
+}
+    .textbox{
+        /* display: flex; */
+        flex-direction: column;
+        /* padding-left: 36em; */
+        padding-top: 3em;
+    }
+    
+}
