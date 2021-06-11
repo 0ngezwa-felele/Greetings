@@ -45,41 +45,53 @@ describe('greet tests', function () {
         });
     });
    describe("counter", function(){
-        it("Should be able to return the count number if the name is greeted",function(){
+    it("Should be able to return the count number if the name is greeted",function(){
         let number = Greetings()
         number.setNames("Pumza");
-        number.getPlease("Isixhosa", "Pumza")
+        number.greetPlease("English", "Pumza")
+      assert.equal(1, number.counter1())  
    
    })
  
-   
+   it("Should be able to stop the counter from incrementing when the same name is greeted",function(){
+    let number = Greetings()
+    number.setNames("Pumza");
+    number.greetPlease("English", "Pumza")
+    number.greetPlease("English", "Pumza")
+  assert.equal(1, number.counter1())  
+
+})
 });
 describe("Namelist",function(){
-    it("The number of times a name has been greeted",function(){
+    it("Should be able to return the number of names greeted",function(){
         let counting  = Greetings([])
         var name = "ongi"
         var name2 = "avuzwa"
         var name3 = "Ano"
-        var name4 = "kulisa"
-        var name5 = "natty"
-        var name6 = "Moso"
-        var name7  = "Ino"
-        var name8 = "Rori"
-        var name9 = "Azie"
-        var name10 = "milz"
-
+      
         counting.setNames(name)
         counting.setNames(name2)
         counting.setNames(name3)
-        counting.setNames(name4)
-        counting.setNames(name5)
-        counting.setNames(name6)
-        counting.setNames(name7)
-        counting.setNames(name8)
-        counting.setNames(name9)
-        counting.setNames(name10)
+       
+        assert.deepEqual( 3, counting.counter1())
 
-        assert.deepEqual(10, counting.counter1())
+
+    })
+    it("Should be able to return the list of names greeted",function(){
+        let list  = Greetings([])
+        var name = "ongi"
+        var name2 = "avuzwa"
+        var name3 = "Ano"
+      
+        list.setNames(name)
+        list.setNames(name2)
+        list.setNames(name3)
+
+        list.greetPlease(name)
+        list.greetPlease(name2)
+        list.greetPlease(name3)
+       
+        assert.deepEqual( ["Ongi", "Avuzwa", "Ano"], list.getText())
 
 
     })
