@@ -1,5 +1,6 @@
 .overall{
-    /* margin:10%; */
+    width: 80%;
+    margin:auto;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -20,15 +21,19 @@
 }
 .buttons{
     display: flex;
-    padding-left: 37em;
+    padding-left: 36em;
+    width: 80%;
+    margin: auto;
 }
 .tabs{
     padding: 5em;
+    margin-left: 10px;
 }
 .textbox{
     display: flex;
-    padding-left: 36em;
-    padding-top: 3em;
+    padding-left: 35em;
+    margin: auto;
+    margin-left: 50px;
 }
 .count{
     padding-left: 2em;
@@ -38,13 +43,14 @@
     
 }
 .butt1 button{
-    width: 80px;
+    width: 150px;
+    margin: auto;
     height: 50px;
     border: solid black;
     border-radius: 15px;
 }
 .butt2 button{
-    width: 80px;
+    width: 150px;
     height: 50px;
     border: solid black;
     border-radius: 15px;
